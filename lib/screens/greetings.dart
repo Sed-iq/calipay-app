@@ -65,7 +65,7 @@ class Greetings extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(7))),
                         onPressed: () {
-                          Get.toNamed(RouteConstants.REGISTER);
+                          Get.toNamed(RouteConstants.SUBSCRIPTION);
                         },
                         child: const Txt(text: "CREATE A NEW ACCOUNT")),
                     const SizedBox(height: 15),

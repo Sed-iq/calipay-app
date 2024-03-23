@@ -7,10 +7,12 @@ class NormalInput extends StatelessWidget {
   final String label;
   final String hint;
   final TextInputType? type;
+  final int? maxLines;
   final TextEditingController controller;
   const NormalInput({
     super.key,
     this.type,
+    this.maxLines,
     required this.label,
     required this.controller,
     required this.hint,
@@ -32,8 +34,10 @@ class NormalInput extends StatelessWidget {
             height: 10,
           ),
           TextField(
+            maxLines: maxLines ?? 1,
             keyboardType: type,
             controller: controller,
+            cursorColor: CustomColor.PlushBlue,
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(color: Colors.grey.shade500),
@@ -85,6 +89,7 @@ class PassworInput extends StatelessWidget {
             obscureText: true,
             keyboardType: type,
             controller: controller,
+            cursorColor: CustomColor.PlushBlue,
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(color: Colors.grey.shade500),

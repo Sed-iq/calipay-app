@@ -1,3 +1,4 @@
+import 'package:calipay/components/constants.dart';
 import 'package:flutter/material.dart';
 
 class Txt extends StatelessWidget {
@@ -45,6 +46,7 @@ class WTxt extends StatelessWidget {
   final dynamic weight;
   final dynamic align;
   final dynamic fontFamily;
+  final double? horPad; // Horizontal Padding
   final TextOverflow overflow;
   const WTxt(
       {super.key,
@@ -53,6 +55,7 @@ class WTxt extends StatelessWidget {
       this.weight,
       this.align,
       this.fontFamily,
+      this.horPad,
       required this.overflow,
       this.color});
   @override
@@ -60,15 +63,18 @@ class WTxt extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Text(
-            text,
-            overflow: overflow,
-            textAlign: align ?? TextAlign.start,
-            style: TextStyle(
-                fontFamily: fontFamily,
-                color: color ?? Colors.white,
-                fontSize: size,
-                fontWeight: weight),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: horPad ?? 0),
+            child: Text(
+              text,
+              overflow: overflow,
+              textAlign: align ?? TextAlign.start,
+              style: TextStyle(
+                  fontFamily: fontFamily,
+                  color: color ?? Colors.white,
+                  fontSize: size,
+                  fontWeight: weight),
+            ),
           ),
         ),
       ],
