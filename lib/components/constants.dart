@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const String ass = "assets";
+const String url = "https://cali-pay.vercel.app";
 
 class CustomColor {
   static Color bgLightBlue = const Color(0xBB0022FF);
